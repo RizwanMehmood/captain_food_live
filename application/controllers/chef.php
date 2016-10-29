@@ -18,7 +18,7 @@ class chef extends CI_Controller {
 	
 	public function chefList()
 	{
-			$result=$this->common_model->find('chefs', '*');
+			$result=$this->Common_Model->find('chefs', '*');
 			$data['chefs']=$result;
 			$this->load->view('admin/chef/chef_list',$data);
 		

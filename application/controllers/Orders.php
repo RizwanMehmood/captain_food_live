@@ -22,8 +22,11 @@ class Orders extends CI_Controller {
 			
 			$this->load->view('CaptainFood/OrderNow',$data);
 	}
+	
 	public function SendOrder()
 	{
+		
+		
 		$msg =  'Name: '.$_POST['name'] ."\n";
 		$msg.=	'Email: '.$_POST['email'] ."\n";
 		$msg.=	'Phone: '.$_POST['phone'] ."\n";

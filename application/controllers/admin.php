@@ -19,7 +19,7 @@ class admin extends CI_Controller {
 			{
 					$where = array();
 					$where=$this->input->post(); 
-					$result=$this->common_model->find('user','*', $where);
+					$result=$this->Common_Model->find('user','*', $where);
 					if($result)
 					{
 						$this->session->set_userdata($result[0]);

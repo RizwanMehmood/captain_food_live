@@ -166,7 +166,7 @@
                   </div>
                  </div>
 				</div>
-			   <div class="col-md-6">
+			   <!-- <div class="col-md-6">
 				<div class="row control-group">
                   <div class="form-group col-xs-12 controls">
                    <label>Duaration<span>*</span></label>
@@ -174,7 +174,7 @@
                      <p class="help-block"></p>
                   </div>
                  </div>
-				</div>
+				</div> -->
 			   <div class="col-md-6">
 				<div class="row control-group">
                   <div class="form-group col-xs-12 controls">
