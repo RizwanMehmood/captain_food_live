@@ -98,7 +98,7 @@
                             
                             <td>
                                 Created: <?php echo $result[0]['cDate'];?><br>
-                                Due: <?php echo $result[0]['DueDate'];?>
+                                Due: <?php if($result[0]['PaymentMethod']=='Cash on delivery'){ echo $result[0]['cDate'];} else {echo $result[0]['DueDate'];}?>
                             </td>
                         </tr>
                     </table>
@@ -193,7 +193,7 @@
                 </td>
                 
                 <td>
-                    Menu <?php echo $result[0]['Menu'];?>
+                    <?php echo $result[0]['Menu'];?>
                 </td>
             </tr>
             

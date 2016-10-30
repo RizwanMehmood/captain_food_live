@@ -19,7 +19,7 @@ class customer extends CI_Controller {
 	public function customerList()
 	{
 
-			$result=$this->common_model->find('customers', '*');
+			$result=$this->Common_Model->find('customers', '*');
 			$data['customers']=$result;
 			$this->load->view('admin/customer/customer_list',$data);
 

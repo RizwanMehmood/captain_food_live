@@ -17,8 +17,8 @@
     background-repeat: no-repeat;
 }
 .isa_success {
-    margin: 10px 0px;
-    padding:12px;
+    margin: 2% 0% 2% 2.5%;
+    padding:9px;
     color: #4F8A10;
     background-color: #DFF2BF;
 }
@@ -143,6 +143,7 @@
                    
                     <input type="text" class="form-control"  Value="<?php echo $chef[0]['Name'];?>" disabled="true" id="chefName1" name="chefName1" >
                     <input type="hidden" class="form-control"  Value="<?php echo $chef[0]['Name'];?>"  id="chefName" name="chefName" >
+					<input type="hidden" class="form-control"  Value="<?php echo $chef[0]['ChefID'];?>"  id="chefId" name="chefId" >
                      <p class="help-block"></p>
                   </div>
                  </div>
@@ -151,8 +152,9 @@
 				<div class="row control-group">
                   <div class="form-group col-xs-12 controls">
                    <label>Menu</label>
-                    <input type="text" class="form-control" Value="Menu <?php echo $results[0]['menuID'];?>" disabled="true" id="Menu1" name="Menu1" >
-                    <input type="hidden" class="form-control" Value="Menu <?php echo $results[0]['menuID'];?>" hidden="true" id="menu" name="menu" >
+                    <input type="text" class="form-control" Value="<?php echo $results[0]['MenuName'];?>" disabled="true" id="Menu1" name="Menu1" >
+                    <input type="hidden" class="form-control" Value="<?php echo $results[0]['MenuName'];?>" hidden="true" id="menu" name="menu" >
+					<input type="hidden" class="form-control" Value="<?php echo $results[0]['menuID'];?>" hidden="true" id="menuId" name="menuId" >
                      <p class="help-block"></p>
                   </div>
                  </div>
@@ -166,40 +168,59 @@
                   </div>
                  </div>
 				</div>
-			   <!-- <div class="col-md-6">
-				<div class="row control-group">
-                  <div class="form-group col-xs-12 controls">
-                   <label>Duaration<span>*</span></label>
-                    <input type="number" class="form-control" placeholder="Enter number of weeks " id="duration" min="1" max="4" name="duration" required data-validation-required-message="Please enter duration.">
-                     <p class="help-block"></p>
-                  </div>
-                 </div>
-				</div> -->
-			   <div class="col-md-6">
+			  
+			  <div class="col-md-6">
 				<div class="row control-group">
                   <div class="form-group col-xs-12 controls">
                    <label>Quantity<span>*</span></label>
-                    <input type="number" class="form-control" placeholder="Serving per person" id="Quantity"  name="Quantity"  required data-validation-required-message="Please enter serving Quantity.">
+                    <input type="number" min="1" class="form-control" placeholder="Serving per person" id="Quantity"  name="Quantity"  required data-validation-required-message="Please enter serving Quantity.">
                      <p class="help-block"></p>
                   </div>
-                   
                  </div>
-                 <br>
 				</div>
 				
-				 <div id="success"></div>
-                   <div class="row">
-                   <div id="successMessage" class="isa_success" style="display:none;">
-		  		<strong>Order Placed Successfully!</strong> 
-		</div>
-                    <div class="col-lg-12 text-center">
+				<div class="col-md-6">
+				<div class="row control-group">
+                  <div class="form-group col-xs-12 controls">
+                   <label>Select the Delivery time<span>*</span></label>
+                    <select name="delivertime" class="form-control" required data-validation-required-message="Please select the Delivery time">
+					  <option value="12:30pm - 01:00pm">12:30pm - 01:00pm</option>
+					  <option value="01:00pm - 01:30pm">01:00pm - 01:30pm</option>
+					  <option value="01:30pm - 02:00pm">01:30pm - 02:00pm</option>
+					  <option value="02:00pm - 02:30pm">02:00pm - 02:30pm</option>
+					</select>
+                  </div>
+                 </div>
+				</div>
+				
+				<div class="col-md-6">
+				<div class="row control-group">
+                  <div class="form-group col-xs-12 controls">
+                   <label>How many days of week you want to eat?<span>*</span></label>
+					<select name="daysofweek" class="form-control" required data-validation-required-message="Please select the days of week">
+					  <option value="5">5 Days a Week</option>
+					<?php if($results[0]['sat_dishes'] != ''){ ?> <option value="6">6 Days a Week</option><?php } ?>
+					</select>
+                  </div>
+                 </div>
+				 
+				 <div id="success">
+					   <div class="row">
+							<div id="successMessage" class="isa_success" style="display:none;">
+								<strong>Order Placed Successfully!</strong> 
+							</div>
+						</div>
+					</div>
+    			<br/>
+				</div>
+						
+				    <div class="col-lg-12 text-center">
                       <button type="submit" class="btn btn-theme-bg btn-lg">Submit</button>
                     </div>
-                   </div>
+               </div>
 			 </div>
-			</div>
-		 </div>
-		</div> 
+		   </div>
+		 </div> 
 	 </section>
    </form>
 		<section id="footer">
